@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Header from './Header';
+import PigBox from './PigBox';
+import PigFood from './PigFood';
+import { Block } from './enums';
+import PigMisc from './PigMisc';
+import Opinions from './Opinios';
 
 function App() {
+
+  const [block, setBlock] = useState(Block.None);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App w-full h-full flex flex-col">
+      <Header block={block}/>
+      <PigBox setBlock={setBlock}/>
+      <PigFood setBlock={setBlock}/>
+      <PigMisc setBlock={setBlock}/>
+      <Opinions setBlock={setBlock}/>
+      <div className='mt-36'></div>
     </div>
   );
 }
