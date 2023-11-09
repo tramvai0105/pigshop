@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/pigshop/static/css/main.d0822e06.css",
+    "main.js": "/pigshop/static/js/main.0871f9ef.js",
+    "static/media/pigboxtrp.png": "/pigshop/static/media/pigboxtrp.670c35bcd01418d45192.png",
+    "static/media/zhelud.jpg": "/pigshop/static/media/zhelud.34f62b218381cc06c77c.jpg",
+    "static/media/elvis.jpg": "/pigshop/static/media/elvis.c0f5d6a594506910cad3.jpg",
+    "static/media/korm.jpg": "/pigshop/static/media/korm.36dd3a30c1dd57128a85.jpg",
+    "static/media/grum.png": "/pigshop/static/media/grum.181c45052806fa295e7a.png",
+    "static/media/gang.jpg": "/pigshop/static/media/gang.4f85053afad7af594e05.jpg",
+    "static/media/buter.jpg": "/pigshop/static/media/buter.75984506c8faf55ea824.jpg",
+    "static/media/dirt.jpg": "/pigshop/static/media/dirt.ca87108cf7eb87e52815.jpg",
+    "static/media/fly.jpg": "/pigshop/static/media/fly.317663d870515865d380.jpg",
+    "static/media/farmer.jpg": "/pigshop/static/media/farmer.baa513e5f25dd09086b9.jpg",
+    "static/media/idiot.jpg": "/pigshop/static/media/idiot.e635ea83dc3d7063e31a.jpg",
+    "static/media/banana.jpg": "/pigshop/static/media/banana.63a6cc8aaa6f4c775333.jpg",
+    "static/media/cart.svg": "/pigshop/static/media/cart.dd0bfa9c361b795b319f67d5906d8b0b.svg",
+    "index.html": "/pigshop/index.html",
+    "main.d0822e06.css.map": "/pigshop/static/css/main.d0822e06.css.map",
+    "main.0871f9ef.js.map": "/pigshop/static/js/main.0871f9ef.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0822e06.css",
+    "static/js/main.0871f9ef.js"
+  ]
+}
