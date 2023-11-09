@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pigshop/static/css/main.d0822e06.css",
-    "main.js": "/pigshop/static/js/main.0871f9ef.js",
+    "main.css": "/pigshop/static/css/main.50782c26.css",
+    "main.js": "/pigshop/static/js/main.acf6bb83.js",
     "static/media/pigboxtrp.png": "/pigshop/static/media/pigboxtrp.670c35bcd01418d45192.png",
     "static/media/zhelud.jpg": "/pigshop/static/media/zhelud.34f62b218381cc06c77c.jpg",
     "static/media/elvis.jpg": "/pigshop/static/media/elvis.c0f5d6a594506910cad3.jpg",
@@ -16,11 +16,11 @@
     "static/media/banana.jpg": "/pigshop/static/media/banana.63a6cc8aaa6f4c775333.jpg",
     "static/media/cart.svg": "/pigshop/static/media/cart.dd0bfa9c361b795b319f67d5906d8b0b.svg",
     "index.html": "/pigshop/index.html",
-    "main.d0822e06.css.map": "/pigshop/static/css/main.d0822e06.css.map",
-    "main.0871f9ef.js.map": "/pigshop/static/js/main.0871f9ef.js.map"
+    "main.50782c26.css.map": "/pigshop/static/css/main.50782c26.css.map",
+    "main.acf6bb83.js.map": "/pigshop/static/js/main.acf6bb83.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0822e06.css",
-    "static/js/main.0871f9ef.js"
+    "static/css/main.50782c26.css",
+    "static/js/main.acf6bb83.js"
   ]
 }
