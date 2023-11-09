@@ -11,7 +11,7 @@ interface PigMiscProps{
     setBlock: React.Dispatch<React.SetStateAction<Block>>,
   }
 
-function PigMisc({setBlock}:PigMiscProps) {
+function PigMiscM({setBlock}:PigMiscProps) {
 
     const pigFoodRef = useRef<HTMLDivElement>(null);
 
@@ -28,9 +28,9 @@ function PigMisc({setBlock}:PigMiscProps) {
 
     return (
         <div ref={pigFoodRef} id='misc' className="w-full flex mt-36 flex-col">
-            <span className='text-[40px] font-bold bg-[#90E0EF] px-8 py-2 text-center'>Средства ухода</span>
-            <div className='mt-10 bg-white p-1 ml-auto mr-auto flex justify-center mx-36 w-[80%] h-fit'>
-                <div className='overflow-hidden h-fit w-fit grid grid-cols-3 space-x-4'>
+            <span className='text-[36px] font-bold bg-[#90E0EF] px-8 py-2 text-center'>Средства ухода</span>
+            <div className='mt-10 w-full bg-white flex justify-center h-fit'>
+                <div className='overflow-hidden w-[95%] h-fit grid grid-cols-2 space-y-2'>
                     <MiscItem name='Щётки для свиньи' price='999' moneyPrice={999} photo={grum}/>
                     <MiscItem name='Измерительный банан' price='200' moneyPrice={200} photo={banana}/>
                     <MiscItem name='Грязь специальная' price='1л - 50' moneyPrice={50} photo={dirt}/>
@@ -48,24 +48,24 @@ interface MiscItemProps{
     photo: string,
 }
 
-function MiscItem({name, price, photo, moneyPrice, height = 350}: MiscItemProps) {
+function MiscItem({name, price, photo, moneyPrice, height = 500}: MiscItemProps) {
     
     const {alert, showAlert} = useAlert();
     
     return (
-        <div style={{width: height}} className="flex flex-col bg-gray-100 rounded-3xl">
-            <img className='w-full rounded-t-3xl h-2/3 object-cover' src={photo} />
-            <div className='w-full h-1/3 flex flex-col p-10'>
-                <span className='text-[20px] font-bold'>{name}</span>
-                <span className='text-[18px]'>{price + "₽"}</span>
-                {alert?<span className='absolute translate-x-[120%] translate-y-[140%]'>Товар добавлен</span>:<></>}
-                <div onClick={()=>{showAlert();store.addItem(new Item(name, moneyPrice, 1))}} className='flex flex-row ml-auto mr-10 items-center space-x-2 cursor-pointer'>
+        <div className="flex max-w-[200px] h-auto flex-col bg-gray-100 rounded-3xl">
+            <img className='w-full max-w-[200px] max-h-[200px] min-h-[200px] rounded-t-3xl object-cover' src={photo} />
+            <div className='w-full relative h-full flex flex-col p-2'>
+                <span className='text-[18px] font-bold'>{name}</span>
+                <span className='text-[16px]'>{price + "₽"}</span>
+                {alert?<span className='absolute bg-white p-1 top-[100%] -translate-y-[140%] translate-x-5'>Товар добавлен</span>:<></>}
+                <div onClick={()=>{showAlert();store.addItem(new Item(name, moneyPrice, 1))}} className='flex mt-auto flex-row ml-auto mr-10 items-center space-x-2 cursor-pointer'>
                     <span>В корзину</span>
-                    <button className='text-[30px] hover:bg-white border-[2px] border-gray-400 rounded-2xl px-4'>+</button>
+                    <button className='text-[30px] hover:bg-white border-[2px] border-gray-400 rounded-2xl px-2'>+</button>
                 </div>
             </div>
         </div>
     )
 }
 
-export default PigMisc;
+export default PigMiscM;

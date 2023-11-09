@@ -6,6 +6,7 @@ import korm from "./img/korm.jpg";
 import { Block } from './enums';
 import store from './store';
 import Item from './Item';
+import useAlert from './useAlert';
 
 interface PigFoodProps{
     setBlock: React.Dispatch<React.SetStateAction<Block>>,
@@ -28,7 +29,7 @@ function PigFood({setBlock}:PigFoodProps) {
 
     return (
         <div ref={pigFoodRef} id='food' className="w-full flex mt-36 flex-col">
-            <span className='text-[40px] font-bold bg-[#90E0EF] text-center px-8 py-2'>Хрючева</span>
+            <span className='text-[40px] font-bold bg-[#90E0EF] text-center px-8 py-2'>Вкусняшки</span>
             <div className='mt-10 ml-auto mr-auto bg-white p-1 flex mx-36 w-[80%] h-fit border-[#CAF0F8] rounded-3xl border-[2px]'>
                 <div className='overflow-hidden w-full grid space-y-1 rounded-3xl'>
                     <FoodItem height={200} name='Желуди на развес' price='1кг - 100' moneyPrice={100} photo={zhelud}/>
@@ -50,15 +51,19 @@ interface FoodItemProps{
 }
 
 function FoodItem({name, price, photo, moneyPrice, height = 150}: FoodItemProps) {
+
+    const {alert, showAlert} = useAlert();
+
     return (
         <div style={{height: height}} className="flex flex-row bg-gray-100">
             <img className='h-full w-2/3 object-cover' src={photo} />
-            <div className='w-1/3 h-full flex flex-col p-10'>
+            <div className='w-1/3 h-full flex flex-col p-10 relative'>
                 <span className='text-[20px] font-bold'>{name}</span>
                 <span className='text-[18px]'>{price + "₽"}</span>
-                <div onClick={()=>store.addItem(new Item(name, moneyPrice, 1))} className='flex flex-row ml-auto mr-10 items-center space-x-2 cursor-pointer'>
+                {alert?<span className='absolute left-[55%] translate-y-[140%]'>Товар добавлен</span>:<></>}
+                <div onClick={()=>{showAlert();store.addItem(new Item(name, moneyPrice, 1))}} className='flex flex-row ml-auto mr-10 items-center space-x-2 cursor-pointer'>
                     <span>В корзину</span>
-                    <button className='text-[30px] border-[2px] border-gray-400 rounded-2xl px-4'>+</button>
+                    <button className='text-[30px] hover:bg-white border-[2px] border-gray-400 rounded-2xl px-4'>+</button>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ interface CartProps{
     setOrder: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-function Cart({hidden, setOrder}: CartProps){
+function CartM({hidden, setOrder}: CartProps){
 
     const [price, setPrice] = useState(0)
 
@@ -26,10 +26,11 @@ function Cart({hidden, setOrder}: CartProps){
     }
 
     return(
-        <div onClick={(e)=>e.stopPropagation()} style={{marginTop: (!hidden)? "84px":"49px"}} className='fixed text-[20px] z-40 bg-white border-[2px] flex p-3 flex-col rounded-3xl border-[#ADE8F4] ml-[100%] -translate-x-[125%] w-[600px] h-fit'>
+        <div onClick={(e)=>e.stopPropagation()} style={{marginTop: (!hidden)? "84px":"49px"}} 
+        className='fixed text-[20px] z-40 bg-white border-[2px] flex p-3 flex-col rounded-3xl border-[#ADE8F4] w-[98%] translate-x-1 h-fit'>
             <h1>Ваш заказ</h1>
             <div className='w-full h-[1px] bg-gray-400 mb-1'></div>
-            <div className="space-y-1">{getItems()}</div>
+            <div className="space-y-1 w-full overflow-y-scroll max-h-[450px]">{getItems()}</div>
             <div className="mt-12"></div>
             <div className="mt-auto flex w-full justify-center mb-2">
                 <span className="">Полная стоимость: {price + "₽"}</span>
@@ -48,9 +49,10 @@ interface CartItemProps{
 function CartItem({name, price , quantity}: CartItemProps){
     return(
         <div className="w-full border-b-[2px] border-blue-100 h-fit items-center flex flex-row">
-            <span className="ml-4">{name}</span>
-            <span className="ml-1 mr-3">:</span>
-            <span>{price*quantity + "₽"}</span>
+            <div className="flex-col ml-4 mr-2 flex">
+                <span>{name}</span>
+                <span>{price*quantity + "₽"}</span>
+            </div>
             <span className="ml-auto flex">Всего: <input className="w-[24px]" onChange={(e)=>store.setValue(name, e.target.value)} value={quantity}/></span>
             <button onClick={()=>store.increaseQ(name)} className="text-[20px] ml-2 px-2 bg-gray-50">+</button>
             <button onClick={()=>store.decreaseQ(name)} className="text-[20px] px-2 ml-1 bg-gray-50">-</button>
@@ -59,5 +61,5 @@ function CartItem({name, price , quantity}: CartItemProps){
     )
 }
 
-let observedCart = observer(Cart);
-export default observedCart;
+let observedCartM = observer(CartM);
+export default observedCartM;

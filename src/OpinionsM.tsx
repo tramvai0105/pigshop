@@ -9,7 +9,7 @@ interface OpinionsProps{
     setBlock: React.Dispatch<React.SetStateAction<Block>>,
 }
 
-function Opinions({setBlock}:OpinionsProps){
+function OpinionsM({setBlock}:OpinionsProps){
 
     const opinionsRef = useRef<HTMLDivElement>(null);
 
@@ -26,9 +26,9 @@ function Opinions({setBlock}:OpinionsProps){
 
     return(
         <div ref={opinionsRef} id="opinions" className="w-full mt-36 text-center flex flex-col">
-            <span className='text-[40px] font-bold bg-[#90E0EF] px-8 py-2'>Отзывы</span>
-            <div className="w-[80%] ml-auto mr-auto mt-6">
-                <div className="bg-[#0077B6] grid grid-cols-2 h-fit py-6 pl-4 bg-opacity-20 rounded-2xl">
+            <span className='text-[36px] font-bold bg-[#90E0EF] px-8 py-2'>Отзывы</span>
+            <div className="w-[90%] ml-auto mr-auto mt-6">
+                <div className="bg-[#0077B6] flex flex-col h-fit py-3 pl-2 bg-opacity-20 rounded-2xl">
                     <Opinion photo={farmer}>После покупки Пигбокса все хрюши на моей ферме стали
                     гораздо счастливее. Они радостно хрюкают и с аппетитом едят, поэтому при забое с них
                     выходит гораздо больше мяса. Я ни разу не пожалел о покупке Пигбокса и советую его всем любителям свиней!</Opinion>
@@ -53,10 +53,10 @@ interface OpinionProps{
 function Opinion({children, photo}:OpinionProps){
     return(
         <div className="h-full w-full flex flex-row items-center p-2">
-            <img className="rounded-full h-[150px] min-h-[150px] min-w-[150px] object-cover" src={photo}/>
-            <span className="text-[22px] bg-gray-50 rounded-2xl ml-1 text-left p-4">{children}</span>
+            <img className="rounded-full h-[100px] mb-auto min-h-[100px] min-w-[100px] object-cover" src={photo}/>
+            <span className="text-[16px] bg-gray-50 rounded-2xl ml-1 text-left p-4">{children}</span>
         </div>
     )
 }
 
-export default Opinions;
+export default OpinionsM;
